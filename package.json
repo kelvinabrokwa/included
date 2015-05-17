@@ -1,0 +1,34 @@
+{
+  "name": "inlcuded",
+  "version": "0.0.2",
+  "description": "graphically represent c++ includes",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src/crawl.js > src/build.js"
+  },
+  "bin": {
+    "included": "index.js"
+  },
+  "preferGlobal": "true",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kelvinabrokwa/inlcuded.git"
+  },
+  "keywords": [
+    "c++",
+    "graph",
+    "network"
+  ],
+  "author": "Kelvin Abrokwa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kelvinabrokwa/inlcuded/issues"
+  },
+  "homepage": "https://github.com/kelvinabrokwa/inlcuded",
+  "dependencies": {
+    "express": "^4.12.3"
+  },
+  "devDependencies": {
+    "babel": "^5.4.3"
+  }
+}

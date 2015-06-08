@@ -1,6 +1,6 @@
 {
-  "name": "inlcuded",
-  "version": "0.0.2",
+  "name": "included",
+  "version": "0.0.3",
   "description": "graphically represent c++ includes",
   "main": "index.js",
   "scripts": {

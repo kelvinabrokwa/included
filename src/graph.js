@@ -1,4 +1,5 @@
-$.ajax({ 
+/* global $, cytoscape */
+$.ajax({
   url: '/data'
 }).done(function(data) {
 

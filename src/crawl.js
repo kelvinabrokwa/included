@@ -20,10 +20,10 @@ function traverse(dir) {
   var items = fs.readdirSync(dir)
     .filter(f => { return f[0] !== '.'; })
     .map(f => { return dir + '/' + f; });
- 
+
   for (var i in items) {
     var type = fs.lstatSync(items[i]).isDirectory() ? 'dir' : 'file';
-    if (type === 'dir') traverse(items[i]); 
+    if (type === 'dir') traverse(items[i]);
     else files.push(items[i]);
   }
 }
@@ -35,17 +35,17 @@ function organize(files) {
     if (incl)
       indie[files[f]] = incl;
   }
-  
+
   var clean = {};
   Object.keys(indie).forEach(f => {
     clean[fname(f)] = indie[f].map(i => fname(i));
   });
-  
+
   for (var key in indie) {
     var name = fname(key);
     if (!(name in table)) table[name] = key;
     for (var i in indie[key]) {
-      var n = fname(indie[key][i]); 
+      var n = fname(indie[key][i]);
       if (!(n in table)) table[n] = indie[key][i];
     }
   }
@@ -54,7 +54,7 @@ function organize(files) {
   out.nodes = Object.keys(table).map(f => {
     return { data: { id: f } };
   });
-  
+
   for (var orig in clean) {
     for (var i in clean[orig]) {
       var dest = clean[orig][i];

@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 'use strict';
 
-var express =  require('express'),
-    app = express(),
+var express = require('express'),
     exec = require('child_process').exec,
+    path = require('path'),
     crawl = require('./src/build');
+
+var app = express();
 
 var data = crawl(process.argv[2]);
 
-app.get('/', function(req, res) { res.sendFile(__dirname + '/index.html'); })
+app.get('/', function(req, res) { res.sendFile(path.join(__dirname, '/index.html')); });
 app.get('/data', function(req, res) { res.send(JSON.stringify(data)); });
 
 app.use(express.static(__dirname + '/'));
